@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Pick a look for the website</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#1F1D1B;color:#F3EEE0;font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:18px;line-height:1.45}
+.top{padding:16px 16px 10px;max-width:900px;margin:0 auto}
+h1{font-size:22px;margin:0 0 6px}
+.top p{margin:0 0 12px;color:#D9D4C7;font-size:16px}
+.bar{position:sticky;top:0;background:#1F1D1B;padding:8px 16px 12px;border-bottom:1px solid #3a3734;z-index:2}
+.group{max-width:900px;margin:0 auto 8px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.group b{font-size:14px;color:#9A9486;min-width:52px}
+button{font:inherit;font-size:16px;font-weight:600;padding:10px 14px;border:2px solid #6b665f;background:transparent;color:#F3EEE0;border-radius:4px;cursor:pointer;min-height:44px}
+button[aria-pressed="true"]{background:#F3EEE0;color:#1F1D1B;border-color:#F3EEE0}
+.sw{display:inline-block;width:14px;height:14px;border-radius:50%;vertical-align:-2px;margin-right:6px;border:1px solid rgba(255,255,255,.4)}
+.frame{max-width:1200px;margin:0 auto;padding:16px}
+.frame img{display:block;width:100%;height:auto;background:#fff}
+.now{max-width:900px;margin:0 auto;padding:0 16px;color:#D9D4C7;font-size:15px}
+.foot{max-width:900px;margin:0 auto;padding:16px;color:#9A9486;font-size:14px}
+</style>
+</head>
+<body>
+<div class="top">
+  <h1>Pick a look for your website</h1>
+  <p>Two layouts, four color schemes. Tap the buttons to switch. These are pictures of what the site would look like (the photos are stand-ins until we have yours). When you have a favorite, just reply to Hunter's email with the layout and the color.</p>
+</div>
+<div class="bar">
+  <div class="group" id="styles"><b>Layout</b>
+    <button data-style="showroom" aria-pressed="true">The showroom</button>
+    <button data-style="bedfirst" aria-pressed="false">The bed first</button>
+  </div>
+  <div class="group" id="colors"><b>Colors</b>
+    <button data-color="blue" aria-pressed="true"><span class="sw" style="background:#203e53"></span>Blue</button>
+    <button data-color="red" aria-pressed="false"><span class="sw" style="background:#A3241C"></span>Barn red</button>
+    <button data-color="sage" aria-pressed="false"><span class="sw" style="background:#3F5A47"></span>Sage</button>
+    <button data-color="sky" aria-pressed="false"><span class="sw" style="background:#4F86A8"></span>Charcoal and sky</button>
+  </div>
+</div>
+<p class="now" id="now"></p>
+<div class="frame"><img id="pic" alt="Preview of the website"></div>
+<p class="foot">Previews only, not the live site. Nothing here is public.</p>
+<script>
+(function(){
+  var style='showroom', color='blue';
+  var names={showroom:'The showroom',bedfirst:'The bed first',blue:'Blue',red:'Barn red',sage:'Sage',sky:'Charcoal and sky'};
+  var pic=document.getElementById('pic'), now=document.getElementById('now');
+  function size(){ return window.innerWidth<700?'phone':'desktop'; }
+  function show(){
+    pic.src='img/'+style+'-'+color+'-'+size()+'.jpg';
+    now.textContent='Showing: '+names[style]+', '+names[color]+'.';
+    document.querySelectorAll('[data-style]').forEach(function(b){b.setAttribute('aria-pressed', b.dataset.style===style);});
+    document.querySelectorAll('[data-color]').forEach(function(b){b.setAttribute('aria-pressed', b.dataset.color===color);});
+  }
+  document.getElementById('styles').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b) return; style=b.dataset.style; show(); window.scrollTo({top:0});});
+  document.getElementById('colors').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b) return; color=b.dataset.color; show();});
+  var last=size(); window.addEventListener('resize',function(){ if(size()!==last){ last=size(); show(); } });
+  // warm the cache so switching is instant
+  ['showroom','bedfirst'].forEach(function(s){['blue','red','sage','sky'].forEach(function(c){ var i=new Image(); i.src='img/'+s+'-'+c+'-'+size()+'.jpg'; });});
+  show();
+})();
+</script>
+</body>
+</html>
