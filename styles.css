@@ -1,0 +1,169 @@
+/* Luxury Mattresses for Less. Colors are named for real things (see the final plan). */
+@font-face { font-family: "Atkinson Hyperlegible Next"; src: url("fonts/atkinson-next-latin.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "Zilla Slab"; src: url("fonts/zilla-slab-600-latin.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Zilla Slab"; src: url("fonts/zilla-slab-700-latin.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+
+:root {
+  --shiplap: #F7F6F2;     /* painted board walls */
+  --black: #1F1D1B;       /* tobacco-barn black */
+  --blue: #2F4A6B;        /* mattress ticking */
+  --red: #7A433B;         /* barn red, SW 7591 "Red Barn" (#7C453D) a hair darker so white text clears 7:1 */
+  --red-pressed: #6A3B34;
+  --galv: #B8B6AF;        /* galvanized tin, hairlines only */
+  --body: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", Verdana, sans-serif;
+  --slab: "Zilla Slab", Rockwell, "Roboto Slab", Georgia, serif;
+  --ticking: repeating-linear-gradient(90deg, var(--blue) 0 3px, var(--shiplap) 3px 7px);
+  --gutter: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--shiplap);
+  color: var(--black);
+  font-family: var(--body);
+  font-size: 19px;
+  line-height: 1.55;
+  overflow-wrap: break-word;
+}
+img { max-width: 100%; height: auto; }
+
+h1, h2 { font-family: var(--slab); font-weight: 700; line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: 32px; }
+h2 { font-size: 30px; }
+p { margin: 0 0 0.9em; }
+.nb { white-space: nowrap; font-variant-numeric: tabular-nums; }
+/* Prices in the slab face: the body face draws zero with a slash, which reads oddly in a price */
+.price-line .nb, .price-rows dd, .steps .nb { font-family: var(--slab); font-weight: 600; font-size: 1.08em; }
+
+a { color: var(--blue); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.wrap { max-width: 36em; padding-left: var(--gutter); padding-right: var(--gutter); margin-left: auto; margin-right: auto; }
+@media (max-width: 359px) { :root { --gutter: 16px; } }
+
+/* ---------- DRAFT marking (remove when Hunter approves) ---------- */
+.draft-bar {
+  background: #ffd400; color: #000;
+  font-size: 16px; font-weight: 700; line-height: 1.4;
+  padding: 8px var(--gutter);
+}
+.draft-mark {
+  position: fixed; inset: 0; z-index: 10; pointer-events: none; opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='220'%3E%3Ctext x='150' y='120' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='52' font-weight='bold' fill='%23000' transform='rotate(-30 150 110)'%3EDRAFT%3C/text%3E%3C/svg%3E");
+}
+
+/* ---------- Header ---------- */
+.site-header { border-bottom: 1px solid var(--galv); }
+.header-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 10px; padding-bottom: 10px; }
+.header-logo { display: block; line-height: 0; }
+.header-logo img { height: 44px; width: auto; }
+.header-email { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; white-space: nowrap; }
+@media (max-width: 400px) { .header-logo img { height: 36px; } }
+@media (max-width: 359px) { .header-logo img { height: 31px; } .header-email { font-size: 17px; } }
+
+/* ---------- Opening ---------- */
+.opening { padding-top: 22px; padding-bottom: 36px; }
+.opening h1 { margin-bottom: 14px; }
+.price-line { font-size: 21px; font-weight: 700; margin-bottom: 18px; }
+
+.btn-email {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  width: 100%; min-height: 56px; padding: 10px 18px;
+  background: var(--red); color: var(--shiplap);
+  font-family: var(--body); font-size: 20px; font-weight: 700; line-height: 1.2;
+  text-decoration: none; border-radius: 2px;
+}
+.btn-email:hover { background: var(--red-pressed); }
+.btn-email:active { background: var(--red-pressed); }
+.place { margin-top: 14px; margin-bottom: 0; }
+
+/* ---------- Prices: the hang tag ---------- */
+.pair { padding-top: 8px; }
+.price-tag {
+  position: relative;
+  background: var(--black); color: var(--shiplap);
+  padding: 52px 24px 24px;
+  clip-path: polygon(28px 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%, 0 28px);
+  margin: 0 0 44px;
+}
+.price-tag::before { /* the punched hole */
+  content: ""; position: absolute; top: 16px; left: 50%; width: 14px; height: 14px; margin-left: -7px;
+  border-radius: 50%; background: var(--shiplap);
+}
+.price-tag h2 { color: var(--shiplap); }
+.price-rows { margin: 0 0 16px; padding: 0; }
+.price-rows .row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; font-size: 20px; padding: 4px 0; }
+.price-rows dt { font-weight: 700; }
+.price-rows .row::after { content: none; }
+.price-rows dt { order: 1; }
+.price-rows .row::before { content: ""; order: 2; flex: 1; border-bottom: 2px dotted var(--galv); transform: translateY(-5px); min-width: 16px; }
+.price-rows dd { order: 3; margin: 0 0 0 auto; font-variant-numeric: tabular-nums; }
+.price-tag p:last-child { margin-bottom: 0; }
+.price-tag .small { font-size: 17px; }
+
+.why { margin-bottom: 40px; }
+
+/* ---------- Photo frame ---------- */
+.photo { margin-top: 0; margin-bottom: 44px; }
+.photo-frame {
+  aspect-ratio: 4 / 3; padding: 12px; background: var(--ticking);
+  display: flex;
+}
+.photo-frame > * { flex: 1; min-width: 0; }
+.photo-empty {
+  margin: 0; background: var(--shiplap);
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-size: 18px; padding: 16px;
+}
+.photo-frame img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Brands, stock, how ---------- */
+.brands, .in-stock, .how { margin-bottom: 40px; }
+.brand-list { font-family: var(--slab); font-weight: 600; font-size: 22px; line-height: 1.35; }
+.stock-list { padding-left: 1.2em; }
+.steps { padding-left: 1.4em; margin: 0 0 18px; }
+.steps li { margin-bottom: 8px; padding-left: 4px; }
+
+/* ---------- Contact ---------- */
+.contact { padding-top: 32px; border-top: 1px solid var(--galv); margin-bottom: 52px; }
+.contact .btn-email { margin: 6px 0 22px; }
+.address-row { display: flex; min-width: 0; flex-direction: column; align-items: flex-start; gap: 12px; }
+.address { font-size: 22px; font-weight: 700; margin: 0; max-width: 100%; overflow-wrap: anywhere; user-select: all; -webkit-user-select: all; }
+.btn-copy {
+  min-height: 48px; padding: 8px 20px;
+  background: transparent; color: var(--black);
+  border: 1px solid var(--black); border-radius: 2px;
+  font-family: var(--body); font-size: 18px; font-weight: 700; cursor: pointer;
+}
+.btn-copy:active { background: #ECEBE6; }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--black); color: var(--shiplap);
+  border-top: 12px solid transparent; border-image: var(--ticking) 1;
+  padding: 32px 0 36px;
+}
+.footer-logo { display: block; width: 168px; height: auto; margin-bottom: 16px; }
+.site-footer p { margin-bottom: 20px; }
+.credit {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 12px;
+  border-top: 1px solid var(--galv); padding-top: 20px;
+  font-size: 16px;
+}
+.credit img { display: block; width: 120px; height: auto; margin: 10px 10px 10px 0; }
+
+/* ---------- Wider screens ---------- */
+@media (min-width: 820px) {
+  .wrap { max-width: 60em; }
+  h1 { font-size: 48px; max-width: 18em; }
+  h2 { font-size: 40px; }
+  .opening { padding-top: 48px; padding-bottom: 56px; }
+  .btn-email { max-width: 22em; }
+  .pair { display: grid; grid-template-columns: 40% 1fr; gap: 56px; align-items: start; }
+  .photo { max-width: 60em; }
+  .photo-frame { max-width: 36em; }
+  .address-row { flex-direction: row; align-items: center; gap: 24px; }
+}

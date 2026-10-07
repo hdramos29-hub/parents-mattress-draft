@@ -2,30 +2,130 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>DRAFT - Mattress site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- DRAFT: remove the robots meta when Hunter approves (see README) -->
 <meta name="robots" content="noindex, nofollow">
-<style>
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: #ffffff; color: #141414; font-family: Georgia, "Times New Roman", serif; font-size: 20px; line-height: 1.5; }
-  .bar { position: fixed; top: 0; left: 0; right: 0; z-index: 2; box-sizing: border-box; min-height: 44px; padding: 10px 24px; background: #ffd400; color: #141414; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; line-height: 24px; }
-  .mark { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 0; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='180'%3E%3Ctext x='130' y='100' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='40' font-weight='bold' fill='%23141414' fill-opacity='0.06' transform='rotate(-30 130 90)'%3EDRAFT%3C/text%3E%3C/svg%3E"); }
-  main { position: relative; z-index: 1; box-sizing: border-box; max-width: 36em; padding: 80px 24px 48px; overflow-wrap: break-word; }
-  h1 { margin: 0 0 16px; font-size: 32px; font-weight: normal; line-height: 1.2; }
-  p { margin: 0 0 16px; }
-  hr { border: 0; border-top: 1px solid #141414; margin: 32px 0 12px; }
-  .stamp { font-size: 14px; margin: 0; }
-</style>
+<title>Luxury Mattresses for Less | Taylor Mill, KY</title>
+<meta name="description" content="Name-brand mattresses, returned like new, for 70 to 80 percent less than retail. Taylor Mill and Independence, Northern Kentucky.">
+<meta property="og:title" content="Luxury Mattresses for Less">
+<meta property="og:description" content="Name-brand mattresses, returned like new, for 70 to 80 percent less than retail. Taylor Mill and Independence, Northern Kentucky.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://parents-mattress-draft.vercel.app/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#F7F6F2">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/atkinson-next-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/zilla-slab-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="copy.js" defer></script>
 </head>
 <body>
-<div class="mark" aria-hidden="true"></div>
-<div class="bar">DRAFT. Not the real website. Not for customers.</div>
-<main>
-  <h1>Website coming soon.</h1>
-  <p>A small family mattress store. Like-new, name-brand mattresses, returned to the maker and sold for a fraction of the price.</p>
-  <p>This page is a draft while the real site is being built. Nothing here is for sale yet.</p>
-  <hr>
-  <p class="stamp">Draft updated: 2026-10-06 3:23 PM ET, setup complete</p>
+
+<!-- DRAFT: remove this bar and the watermark when Hunter approves (see README) -->
+<div class="draft-bar">DRAFT. Not the real website yet. Not for customers.</div>
+<div class="draft-mark" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="header-logo" href="#top" aria-label="Luxury Mattresses for Less, top of page">
+      <img src="img/logo-quilt-horizontal.svg" alt="Luxury Mattresses for Less" width="290" height="44">
+    </a>
+    <a class="header-email" href="#contact">Email us</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="opening wrap">
+    <h1>Name-brand mattresses, returned like new, for 70 to 80 percent less than retail.</h1>
+    <p class="price-line">Queens and Kings <span class="nb">from $450.</span> Twin XL <span class="nb">from $200.</span></p>
+    <a class="btn-email" href="mailto:jramos464@outlook.com?subject=Mattress%20question%20from%20your%20website&amp;body=Hi%2C%0D%0ASize%20I%27m%20looking%20for%3A%0D%0ABrand%20(if%20you%20have%20one%20in%20mind)%3A%0D%0ADays%20and%20times%20that%20work%20for%20me%3A%0D%0A">Email to set up a visit</a>
+    <p class="place">Taylor Mill and Independence, Northern Kentucky. Visits by appointment.</p>
+  </section>
+
+  <div class="wrap pair">
+    <section class="price-tag" aria-labelledby="prices-h">
+      <h2 id="prices-h">Prices</h2>
+      <dl class="price-rows">
+        <div class="row"><dt>Twin XL</dt><dd><span class="nb">from $200</span></dd></div>
+        <div class="row"><dt>Queen</dt><dd><span class="nb">from $450</span></dd></div>
+        <div class="row"><dt>King</dt><dd><span class="nb">from $450</span></dd></div>
+        <div class="row"><dt>Local delivery</dt><dd><span class="nb">from $65</span></dd></div>
+      </dl>
+      <p class="small">Delivery price depends on where you are.</p>
+      <p>Typically 70 to 80 percent less than retail. All sizes, depending on what we have.</p>
+      <p class="pay">We take Venmo, Zelle, PayPal, Apple Pay and cash.</p>
+    </section>
+
+    <section class="why" aria-labelledby="why-h">
+      <h2 id="why-h">Why the lower price?</h2>
+      <p>We pick up returned mattresses and furniture for several high-end retailers, within the manufacturer's warranty period. Every piece we pick up is less than three months old and in like-new condition.</p>
+      <p>Customers have come from as far as Michigan, Indianapolis and Nashville.</p>
+    </section>
+  </div>
+
+  <figure class="photo wrap">
+    <div class="photo-frame">
+      <!-- PHOTO: replace the <p> below with this one line (real photo only; first check it does not show the house, the street or anything that gives away the address):
+      <img src="img/mattress-1.jpg" alt="Describe the mattress in the photo" width="1200" height="900">
+      -->
+      <p class="photo-empty">Photo to come: one of our mattresses.</p>
+    </div>
+  </figure>
+
+  <section class="brands wrap" aria-labelledby="brands-h">
+    <h2 id="brands-h">Brands we often carry</h2>
+    <p class="brand-list">Saatva, Purple, Nectar, DreamCloud, Helix, Leesa and Casper.</p>
+    <p>What we have changes. Email us to ask what's in now.</p>
+  </section>
+
+  <!-- IN STOCK: to show what you have now, add rows to the list and delete the word "hidden" below (see README) -->
+  <section id="in-stock" class="in-stock wrap" aria-labelledby="stock-h" hidden>
+    <h2 id="stock-h">What we have now</h2>
+    <ul class="stock-list">
+      <!-- Example row, copy it for each mattress:
+      <li><span class="stock-size">Queen</span> <span class="stock-brand">Brand name</span> <span class="nb">$000</span></li>
+      -->
+    </ul>
+  </section>
+
+  <section class="how wrap" aria-labelledby="how-h">
+    <h2 id="how-h">How buying works</h2>
+    <ol class="steps">
+      <li>Email us the size you want. We'll tell you what we have.</li>
+      <li>We set a time, and we send you the address.</li>
+      <li>Come see it. Take it home, or we deliver <span class="nb">from $65.</span></li>
+    </ol>
+    <p>We sell most of our mattresses on Facebook Marketplace, too.</p>
+    <!-- FACEBOOK: when Dad gives the Marketplace address, make the sentence above:
+    <p>We sell most of our mattresses on <a href="PASTE-LINK-HERE">Facebook Marketplace</a>, too.</p>
+    -->
+  </section>
+
+  <section id="contact" class="contact wrap" aria-labelledby="contact-h">
+    <h2 id="contact-h">Get in touch</h2>
+    <p>Email us with the size you're looking for and the days that work for you. We'll give you the address when we set up your visit.</p>
+    <a class="btn-email" href="mailto:jramos464@outlook.com?subject=Mattress%20question%20from%20your%20website&amp;body=Hi%2C%0D%0ASize%20I%27m%20looking%20for%3A%0D%0ABrand%20(if%20you%20have%20one%20in%20mind)%3A%0D%0ADays%20and%20times%20that%20work%20for%20me%3A%0D%0A">Email to set up a visit</a>
+    <div class="address-row" id="address-row">
+      <p class="address" id="address">Jramos464@outlook.com</p>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <img class="footer-logo" src="img/logo-quilt-stacked-dark.svg" alt="Luxury Mattresses for Less" width="168" height="97">
+    <p>Luxury Mattresses for Less. Taylor Mill and Independence, Northern Kentucky.</p>
+    <div class="credit">
+      <span>Website by</span>
+      <img src="img/onwrd-one-color-white.svg" alt="ONWRD" width="120" height="39">
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
