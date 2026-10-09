@@ -1,0 +1,156 @@
+/* Luxury Mattresses for Less, v2: "The roadside sign".
+   One family: Overpass (a free revival of Highway Gothic, the lettering on the interstate signs customers follow here).
+   Colors, each from the client's world: barn red (Kentucky barns), clapboard white (farmhouse siding), cool gray (a deliberately not-cream band),
+   tobacco-barn black, one interstate guide-sign green. No brown. */
+@font-face{font-family:Overpass;src:url("fonts/overpass-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:Overpass;src:url("fonts/overpass-600.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:Overpass;src:url("fonts/overpass-800.woff2") format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:Overpass;src:url("fonts/overpass-900.woff2") format("woff2");font-weight:900;font-display:swap}
+:root{
+  --red:#A3241C; --red-deep:#861C15; --white:#FFFFFF; --mist:#EDF0F2;
+  --ink:#1D2125; --ink-2:#434A51; --rule:#C9D0D6; --green:#00694B;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Overpass,system-ui,sans-serif;color:var(--ink);background:var(--white);font-size:19px;line-height:1.5}
+img{display:block;max-width:100%}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px;box-shadow:0 0 0 6px var(--white)}
+.sign a:focus-visible{outline-color:#fff}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+/* ---------- DRAFT marking (remove when Hunter approves) ---------- */
+.draft-bar{background:#ffd400;color:#000;font-size:16px;font-weight:600;text-align:center;padding:8px 16px;line-height:1.35}
+.draft-mark{position:fixed;inset:0;pointer-events:none;opacity:.06;z-index:50;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='220'%3E%3Ctext x='150' y='120' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-size='52' font-weight='bold' fill='%23000' transform='rotate(-30 150 110)'%3EDRAFT%3C/text%3E%3C/svg%3E")}
+
+/* top */
+.top{border-bottom:1px solid #DADFE3}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:68px}
+.name{font-weight:900;font-size:18px;letter-spacing:-.01em;line-height:1.05;text-decoration:none}
+.name span{color:var(--red)}
+.btn-s{font-weight:800;font-size:16px;text-decoration:none;color:var(--white);background:var(--red);padding:13px 16px 11px;border-radius:4px;white-space:nowrap;min-height:44px}
+.btn-s:hover{background:var(--red-deep)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr;position:relative}
+.hero-photo{position:relative;height:360px;overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 70%}
+.hero-copy{padding:28px 20px 28px}
+h1{font-weight:900;font-size:44px;line-height:.98;letter-spacing:-.02em;overflow-wrap:break-word}
+h1 em{font-style:normal;color:var(--red)}
+.lede{margin-top:16px;font-size:19px;color:var(--ink-2);max-width:30ch}
+.cta{display:inline-block;margin-top:22px;background:var(--red);color:var(--white);font-weight:800;font-size:19px;text-decoration:none;padding:17px 22px 14px;border-radius:5px}
+.cta:hover{background:var(--red-deep)}
+.where{margin-top:14px;font-size:16px;color:var(--ink-2)}
+
+/* the price sign: a red panel with the inset white border every road sign has */
+.sign{background:var(--red);color:var(--white);border-radius:12px;padding:6px}
+.sign-in{border:3px solid var(--white);border-radius:8px;padding:16px 20px 14px}
+.sign .row{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
+.sign .row + .row{margin-top:6px}
+.sign .what{font-weight:800;font-size:20px}
+.sign .price{font-weight:900;font-size:40px;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.sign .price small{font-size:16px;font-weight:800;letter-spacing:0;margin-right:4px}
+.sign .foot{margin-top:10px;padding-top:10px;border-top:2px solid rgba(255,255,255,.55);font-weight:600;font-size:16px}
+.hero .sign{order:2;margin:0 20px 28px}
+.hero-photo{order:3}
+
+.label{font-weight:800;font-size:17px;color:var(--ink);letter-spacing:0}
+
+/* brands */
+.brands{padding:44px 0 40px;border-bottom:1px solid #DADFE3}
+.brand-list{margin-top:10px;font-weight:900;font-size:30px;line-height:1.15;letter-spacing:-.015em}
+.brand-list span{white-space:nowrap}
+.brand-list i{font-style:normal;color:#7A848D;font-weight:400;margin:0 .18em}
+.brands p{margin-top:12px;font-size:17px;color:var(--ink-2)}
+
+/* where they come from */
+.source{display:grid;grid-template-columns:1fr;background:var(--mist)}
+.source img{width:100%;height:320px;object-fit:cover;object-position:50% 78%}
+.source .txt{padding:36px 20px 40px}
+h2{font-weight:900;font-size:32px;line-height:1.05;letter-spacing:-.015em}
+.source p{margin-top:14px;max-width:38ch;color:var(--ink-2)}
+.facts{margin-top:20px;list-style:none;border-top:2px solid var(--ink)}
+.facts li{padding:12px 0 10px;border-bottom:1px solid var(--rule);font-weight:600;display:flex;gap:12px}
+.facts li b{color:var(--red);font-weight:900;flex:0 0 7.6em}
+
+/* what we have now (hidden until Dad fills it) */
+.stock{padding:48px 0;border-bottom:1px solid #DADFE3}
+.stock[hidden]{display:none}
+.stock-list{margin-top:18px;list-style:none;border-top:2px solid var(--ink)}
+.stock-list li{display:flex;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule);font-weight:600}
+.stock-list .sz{font-weight:900;min-width:5em}
+.stock-list .pr{margin-left:auto;font-weight:900;color:var(--red)}
+
+/* how to buy */
+.how{padding:48px 0}
+.steps{margin-top:22px;display:grid;grid-template-columns:1fr;border-top:2px solid var(--ink)}
+.step{padding:16px 0 18px;border-bottom:1px solid var(--rule)}
+.step h3{font-weight:900;font-size:24px;line-height:1.1}
+.step p{margin-top:6px;color:var(--ink-2);font-size:18px}
+.pay{margin-top:26px;font-size:17px;padding-top:14px;border-top:1px solid var(--rule)}
+.pay b{font-weight:800}
+
+/* the distance sign: the second and last road sign on the page */
+.road{position:relative;color:var(--white)}
+.road img{width:100%;height:380px;object-fit:cover;object-position:50% 60%}
+.road .gs{position:relative;margin:-24px 20px 0;background:var(--green);border-radius:12px;padding:6px}
+.gs-in{border:3px solid var(--white);border-radius:8px;padding:16px 20px 14px}
+.gs-top{font-weight:800;font-size:17px;margin-bottom:8px}
+.gs .row{display:flex;justify-content:space-between;align-items:baseline;font-weight:800;font-size:26px;line-height:1.25}
+.gs .row span:last-child{font-weight:900}
+.gs-note{margin-top:10px;padding-top:9px;border-top:2px solid rgba(255,255,255,.55);font-size:16px;font-weight:600}
+.road-mi{display:block;font-weight:600;font-size:15px;margin-top:6px}
+
+/* contact */
+.contact{padding:52px 0 56px}
+.contact h2{font-size:38px}
+.contact p{margin-top:12px;max-width:40ch;color:var(--ink-2)}
+#address-row{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px}
+.mail{display:inline-block;font-weight:900;font-size:24px;color:var(--red);text-decoration:none;border-bottom:3px solid var(--red);overflow-wrap:anywhere}
+.btn-copy{font:inherit;font-weight:800;font-size:17px;color:var(--ink);background:var(--white);border:2px solid var(--ink);border-radius:4px;padding:10px 16px 8px;min-height:48px;cursor:pointer}
+.btn-copy:hover{background:var(--mist)}
+.fb{margin-top:24px;font-size:17px}
+
+/* footer */
+footer{background:var(--ink);color:#C7CDD2}
+footer a:focus-visible{outline-color:#fff;box-shadow:none}
+footer .wrap{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:26px;font-size:16px}
+.sig{display:block;width:240px;height:auto;margin:-12px -14px -10px 0}
+
+@media (min-width:900px){
+  .wrap{padding:0 40px}
+  .top .wrap{min-height:84px}
+  .name{font-size:26px}
+  .btn-s{font-size:17px;padding:15px 22px 13px}
+  .hero{grid-template-columns:6fr 6fr;min-height:640px}
+  .hero-copy{grid-column:1;grid-row:1;padding:72px 48px 64px max(40px, calc((100vw - 1240px)/2 + 40px));align-self:center}
+  .hero-photo{order:0;grid-column:2;grid-row:1;height:auto}
+  h1{font-size:64px;max-width:11ch}
+  .lede{font-size:21px;margin-top:22px}
+  .cta{font-size:20px;margin-top:30px}
+  .hero .sign{order:0;position:absolute;left:calc(50% + 40px);bottom:40px;margin:0;width:380px}
+  .brands{padding:60px 0 54px}
+  .brand-list{font-size:48px}
+  .source{grid-template-columns:1fr 1fr}
+  .source img{height:100%;min-height:560px}
+  .source .txt{padding:72px 64px 72px 56px;align-self:center}
+  h2{font-size:46px}
+  .how{padding:76px 0 70px}
+  .how-grid{display:grid;grid-template-columns:4fr 8fr;gap:56px}
+  .steps{margin-top:6px;grid-template-columns:repeat(3,1fr);gap:0 32px;border-top:0}
+  .step{border-top:2px solid var(--ink);border-bottom:0;padding-top:18px}
+  .road img{height:600px}
+  .road .gs{position:absolute;margin:0;left:auto;right:max(40px, calc((100vw - 1240px)/2 + 40px));bottom:48px;width:470px}
+  .contact .wrap{display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:end}
+  .contact h2{font-size:58px}
+  .mail{font-size:30px}
+}
+@media (max-width:359px){
+  .wrap{padding:0 16px}
+  h1{font-size:36px}
+  .brand-list{font-size:26px}
+  .hero .sign,.road .gs{margin-left:16px;margin-right:16px}
+  .sign .price{font-size:32px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
