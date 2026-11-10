@@ -5,17 +5,20 @@ Plain page: `index.html`, `styles.css`, `copy.js`, fonts in `fonts/`, photos in 
 ## Photos (all Unsplash License, free for commercial use, no credit required; credited here anyway)
 - `img/hero.jpg`: Costa Live, quilted mattress top (photo-1759176171789-0aa3f84d15ca).
 - `img/bedroom.jpg`: white bedroom with a made bed (photo-1741559935512-3b018321e35f). Chosen because it has no brown textile or floor.
-- `img/farmhouse.jpg`: Roger Starnes Sr, white farmhouse (photo-1782852634404-972610f87807).
+- `img/farmhouse.jpg`: no longer used on the page (the mileage block was cut on 2026-11-10). Safe to delete.
 Licenses were not re-read on the Unsplash pages today.
 
 ## When Dad's photos are used
 His nine photos are in `ONWARD\teams\PARENTS\reference\dad photos`. Most show a brown-gray wood floor and a brown throw, and some show another brand's label, so crop tight to mattress top and side (image1 is the strongest) and save over `img/hero.jpg` at the same crop. Never show the house.
 
-## Facebook link, in-stock list
-Comments in `index.html` starting `FACEBOOK:` and `IN STOCK:` say what to change. To show the list, delete `hidden` on the `#in-stock` section.
+## Text number
+`config.js` holds the one number buyers text (`textNumber`, digits with country code, currently 859-962-7610). Every "Text us" button reads it. With scripts off the Text buttons stay hidden and the Email buttons still work.
 
-## Distance sign
-Driving miles from Independence, KY, checked with OpenStreetMap routing on 2026-10-09: Indianapolis 120, Nashville 265, Michigan 220 (to the state line at Toledo), rounded to the nearest 5.
+## What we have now
+A plain line saying stock changes every week and to ask for the size. The inventory list comes later; until then do not list stock by hand.
+
+## Domain
+See `DNS.md` for the records to add at Namecheap. Not to be done until Hunter approves the preview.
 
 ## When Hunter approves (one commit)
 1. `index.html`: delete the `draft-bar` and `draft-mark` lines and the `robots` meta.
