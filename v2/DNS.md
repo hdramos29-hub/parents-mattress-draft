@@ -19,5 +19,5 @@ The domain was bought at Namecheap. The site is hosted on Vercel (project `paren
 Vercel's own docs (read 2026-11-10) say the apex domain uses an A record and a subdomain uses a CNAME, and that each project has its own CNAME value, so the values are not the same for every project. The right ones are on the project's Domains settings page. Do not copy values from other projects or old guides.
 
 ## Two things to settle before launch
-- **Which page the domain shows.** This Vercel project serves the whole repo, so the domain would show the older page at the root, not `/v2/`. Before pointing the domain, either move v2 to the root of this repo or add a rewrite from `/` to `/v2/`. Not done yet.
+- **Which page the domain shows.** This Vercel project serves the whole repo, so the domain would show the older page at the root, not `/v2/`. Chosen approach (Hunter's overseer, 2026-11-10): move v2 to the root of this repo at launch, so the address is clean, rather than add a rewrite. Do this only after Hunter approves launch. Not done yet.
 - **The DRAFT marking.** noindex, the robots file and the DRAFT bar stay until Hunter approves launch (see the README).
