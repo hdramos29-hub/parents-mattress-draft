@@ -1,0 +1,202 @@
+/* Luxury Mattresses for Less, v4: "The quiet showroom".
+   White, soft linen gray, charcoal, one deep navy. No bright color anywhere.
+   The page should feel clean before a word is read. Phone first. */
+
+@font-face { font-family: "Newsreader"; src: url("fonts/newsreader-latin-opsz-normal.woff2") format("woff2"); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: "Hanken Grotesk"; src: url("fonts/hanken-grotesk-latin-wght-normal.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+:root {
+  --white: #FFFFFF;
+  --linen: #F3F4F1;
+  --ink: #1C2024;
+  --soft: #555C66;
+  --faint: #8A9099;
+  --line: #E1E3DF;
+  --navy: #1E2F4A;
+  --navy-deep: #16233A;
+  --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gutter: 22px;
+  --max: 1160px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--white); color: var(--ink);
+  font: 400 17px/1.6 var(--sans);
+  padding-bottom: 80px; /* room for the phone thumb bar */
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; }
+h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+.draft-bar { background: var(--linen); color: var(--soft); text-align: center; font: 500 12px/1.3 var(--sans); letter-spacing: .04em; padding: 6px 12px; border-bottom: 1px solid var(--line); }
+
+/* ---------- Type ---------- */
+h1, h2, .brand, .brand-list li, .num, .way-v, .prices dd { font-family: var(--serif); font-optical-sizing: auto; }
+h1 { font-weight: 400; font-size: clamp(42px, 11vw, 76px); line-height: 1.02; letter-spacing: -0.022em; text-wrap: balance; }
+h2 { font-weight: 400; font-size: clamp(31px, 6.6vw, 46px); line-height: 1.1; letter-spacing: -0.018em; text-wrap: balance; }
+h3 { font: 600 18px/1.3 var(--sans); }
+.eyebrow { font: 600 12px/1.3 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); margin-bottom: 16px; }
+.lede { font-size: clamp(18px, 2.2vw, 20px); line-height: 1.6; color: var(--soft); max-width: 31em; margin-top: 22px; }
+p { text-wrap: pretty; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 54px; padding: 0 30px; border-radius: 999px;
+  font: 600 17px/1 var(--sans); text-decoration: none; white-space: nowrap;
+  background: var(--navy); color: #fff; border: 1px solid var(--navy);
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.btn:hover { background: var(--navy-deep); }
+.btn-quiet { background: transparent; color: var(--ink); border-color: #C9CDC8; }
+.btn-quiet:hover { background: var(--linen); border-color: var(--ink); }
+.btn-sm { min-height: 42px; padding: 0 20px; font-size: 15px; }
+
+/* ---------- Header ---------- */
+.top { border-bottom: 1px solid var(--line); }
+.top-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; }
+.brand { font-size: 22px; line-height: 1.1; letter-spacing: -0.01em; text-decoration: none; }
+.brand span { font-style: italic; color: var(--soft); }
+.top-nav { display: none; align-items: center; gap: 22px; }
+.top-note { font-size: 14px; color: var(--soft); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 44px 0 0; }
+.hero-grid { display: grid; gap: 36px; }
+.cta-row { display: none; gap: 12px; margin-top: 32px; } /* on phones the thumb bar does this job */
+.prices { margin-top: 32px; border-top: 1px solid var(--line); }
+.prices > div { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.prices dt { color: var(--soft); font-size: 16px; }
+.prices dd { font-size: 24px; line-height: 1; letter-spacing: -0.01em; white-space: nowrap; }
+.hero-photo img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 78%; border-radius: 6px; }
+
+/* ---------- Assurances ---------- */
+.assure { margin-top: 44px; background: var(--linen); padding: 8px 0; }
+.assure-list { display: grid; }
+.assure-list li { display: grid; gap: 2px; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.assure-list li:last-child { border-bottom: 0; }
+.assure-list b { font: 600 17px/1.3 var(--sans); }
+.assure-list span { color: var(--soft); font-size: 15px; }
+
+/* ---------- Story ---------- */
+.story { padding: 64px 0; }
+.story-grid { display: grid; gap: 32px; }
+.story-photo img { width: 100%; aspect-ratio: 8 / 5; object-fit: cover; border-radius: 6px; }
+.story-copy p + p { margin-top: 16px; }
+.story-copy h2 + p { margin-top: 20px; }
+.story-copy p:not(.eyebrow) { color: var(--soft); max-width: 33em; }
+
+/* ---------- Brands ---------- */
+.brands { padding: 44px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.brand-list { display: flex; flex-wrap: wrap; gap: 6px 0; }
+.brand-list li { font-size: clamp(24px, 3.4vw, 34px); line-height: 1.25; letter-spacing: -0.012em; }
+.brand-list li:not(:last-child)::after { content: "·"; color: var(--faint); margin: 0 0.42em; }
+
+/* ---------- Stock ---------- */
+.stock { padding: 64px 0; }
+.stock-grid { display: grid; gap: 28px; }
+.stock h2 + p { color: var(--soft); margin-top: 16px; max-width: 30em; }
+.sizes { display: flex; flex-wrap: wrap; gap: 10px; }
+.sizes a {
+  display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 24px;
+  font: 500 17px/1 var(--sans); text-decoration: none; border: 1px solid #C9CDC8; border-radius: 999px;
+  transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+}
+.sizes a:hover { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+/* ---------- How ---------- */
+.how { background: var(--linen); padding: 64px 0; }
+.steps { display: grid; gap: 28px; margin-top: 32px; }
+.steps li { display: grid; grid-template-columns: 44px 1fr; column-gap: 8px; }
+.num { grid-row: span 2; font-size: 40px; line-height: 1; color: var(--faint); }
+.steps h3 { align-self: end; padding-top: 6px; }
+.steps p { color: var(--soft); margin-top: 4px; max-width: 26em; }
+
+/* ---------- FAQ ---------- */
+.faq { padding: 64px 0; }
+.faq-grid { display: grid; gap: 24px; }
+.qa { border-top: 1px solid var(--line); }
+.qa > div { padding: 22px 0; border-bottom: 1px solid var(--line); }
+.qa dt { font: 600 18px/1.35 var(--sans); }
+.qa dd { color: var(--soft); margin-top: 8px; max-width: 36em; }
+
+/* ---------- Contact ---------- */
+.contact { background: var(--navy); color: #fff; padding: 64px 0; }
+.contact-grid { display: grid; gap: 32px; }
+.contact p { color: #B9C3D3; margin-top: 16px; max-width: 30em; }
+.contact-ways { border-top: 1px solid rgba(255,255,255,.22); }
+.way { display: grid; gap: 4px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.22); text-decoration: none; }
+.way-k { font: 600 12px/1.2 var(--sans); letter-spacing: 0.14em; text-transform: uppercase; color: #9FACBF; }
+.way-v { font-size: clamp(26px, 7vw, 36px); line-height: 1.15; letter-spacing: -0.012em; overflow-wrap: anywhere; text-decoration: none; }
+a.way:hover .way-v, #address:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
+.btn-copy { justify-self: start; margin-top: 10px; font: 500 14px/1 var(--sans); color: #fff; background: transparent; border: 1px solid rgba(255,255,255,.45); border-radius: 999px; min-height: 40px; padding: 0 16px; cursor: pointer; }
+.btn-copy:hover { background: rgba(255,255,255,.1); }
+
+/* ---------- Footer ---------- */
+footer { background: var(--navy-deep); color: #9FACBF; padding: 26px 0; font-size: 14px; }
+.foot-in { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.sig { width: 124px; height: auto; flex: none; }
+
+/* ---------- Phone thumb bar ---------- */
+.thumb-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 10px;
+  padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.96); border-top: 1px solid var(--line);
+}
+.thumb-bar .btn { min-height: 50px; padding: 0 12px; }
+
+/* ---------- Tablet and up ---------- */
+@media (min-width: 760px) {
+  :root { --gutter: 44px; }
+  body { padding-bottom: 0; font-size: 18px; }
+  .thumb-bar { display: none; }
+  .top-nav { display: flex; }
+  .top-in { min-height: 78px; }
+  .brand { font-size: 25px; }
+  .hero { padding-top: 0; }
+  .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; }
+  .hero-copy { padding: 72px 0; }
+  .cta-row { display: flex; }
+  .prices { margin-top: 44px; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0 40px; border-top: 1px solid var(--line); padding-top: 20px; }
+  .prices > div { display: grid; gap: 6px; padding: 0; border-bottom: 0; }
+  .prices dt { font-size: 14px; }
+  .prices dd { font-size: 26px; }
+  .hero-photo { align-self: stretch; }
+  .hero-photo img { height: 100%; min-height: 560px; aspect-ratio: auto; border-radius: 0 0 6px 6px; }
+  .assure { margin-top: 0; padding: 0; }
+  .assure-list { grid-template-columns: repeat(4, 1fr); }
+  .assure-list li { padding: 30px 28px 30px 0; border-bottom: 0; }
+  .assure-list li + li { padding-left: 28px; border-left: 1px solid var(--line); }
+  .story { padding: 112px 0; }
+  .story-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .story-photo img { aspect-ratio: 5 / 4; }
+  .brands { padding: 56px 0; }
+  .stock { padding: 104px 0; }
+  .stock-grid { grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .how { padding: 104px 0; }
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 48px; margin-top: 48px; }
+  .steps li { display: block; border-top: 1px solid #D5D8D3; padding-top: 22px; }
+  .num { display: block; font-size: 44px; margin-bottom: 18px; }
+  .faq { padding: 104px 0; }
+  .faq-grid { grid-template-columns: 1fr 1.25fr; gap: 80px; }
+  .contact { padding: 104px 0; }
+  .contact-grid { grid-template-columns: 1.1fr 1fr; gap: 80px; align-items: center; }
+  footer { padding: 34px 0; }
+}
+
+@media (min-width: 1100px) {
+  h1 { font-size: 78px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .sizes a { transition: none; }
+}
