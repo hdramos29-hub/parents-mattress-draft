@@ -28,3 +28,6 @@ Same steps as `v2/README.md` and `v2/DNS.md`. Launch moves the chosen version to
 ## In stock now (added 2026-11-10, Hunter's idea)
 Each mattress shows the maker's list price with a link to the maker's own product page, next to our price, so a buyer can check the saving themselves. The three rows on the draft are EXAMPLES (marked on the page): the model names and list prices are real (read from saatva.com and helixsleep.com search results on 2026-11-10, sizes not double-checked), but they are not the parents' stock and "our price" is made up. Replace with real stock before launch, and remove the Example pills. Later the inventory tool writes these rows.
 Wording choice: "Maker's list price", not "retail", because makers are nearly always running a sale. The note under the list says so.
+
+## First screen comparison (added 2026-11-10, Hunter's request)
+Two featured mattresses sit on the first screen under "In stock now": maker's price (a link to the maker's live page) beside our price. Also examples for now. Stock wording changed: the plan is a live inventory list (phone entry or a scanner), so the page says the list is live and a mattress comes off when it sells. That sentence is only true once the inventory tool exists; do not launch with it before then.
