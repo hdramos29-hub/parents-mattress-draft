@@ -31,3 +31,10 @@ Wording choice: "Maker's list price", not "retail", because makers are nearly al
 
 ## First screen comparison (added 2026-11-10, Hunter's request)
 Two featured mattresses sit on the first screen under "In stock now": maker's price (a link to the maker's live page) beside our price. Also examples for now. Stock wording changed: the plan is a live inventory list (phone entry or a scanner), so the page says the list is live and a mattress comes off when it sells. That sentence is only true once the inventory tool exists; do not launch with it before then.
+
+## Changes from Hunter's notes, 2026-11-10 evening
+- Headline is now "High-end, like-new mattresses, typically 70 to 80% under retail." ("returned" was unclear). Starting prices moved into the paragraph under it.
+- Each maker price has a small green dot that pulses (2.4s, off for people who ask for reduced motion). "live at" is gray text; only the site name is a blue underlined link.
+- No explanatory small print under the lists. The Example pills are gone; the draft bar says the mattresses and prices are examples.
+- Before launch: the maker prices must really be current. Plan a daily automatic check of each linked page, or drop the word "live" and the dot.
+- 21st.dev was reviewed signed out (notes in Hunter's Drive, "Mattress site - 21st.dev design picks"). Borrowed: the ping timing idea for the live dot, a plain white hero, a clearly colored link.
