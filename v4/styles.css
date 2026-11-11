@@ -107,6 +107,8 @@ p { text-wrap: pretty; }
 .motion .pairs:not(.on) .arrow::after { opacity: 0; }
 .motion .pairs:not(.on) .q-here .q-v { opacity: .001; transform: translateY(6px); }
 .q-ask { justify-self: start; margin-top: 4px; }
+/* first screen: tighter rows so two mattresses fit above the fold */
+.proofs .q-row { gap: 4px; padding: 12px 0 14px; }
 .pairs-stock { margin-top: 32px; border-top: 1px solid var(--ink); }
 .pairs-stock .q-name { font-size: 26px; }
 
@@ -208,6 +210,8 @@ footer { background: var(--navy-deep); color: #9FACBF; padding: 26px 0; font-siz
   .q-pair { column-gap: 20px; }
   .q-v { font-size: 30px; }
   .q-here .q-v { font-size: 44px; }
+  .proofs .q-row { grid-template-columns: auto 1fr; column-gap: 32px; align-items: end; padding: 14px 0 16px; }
+  .proofs .q-name { white-space: nowrap; padding-bottom: 5px; }
   .pairs-stock { margin-top: 44px; }
   .pairs-stock .q-row { grid-template-columns: 1fr 1.4fr auto; column-gap: 44px; align-items: center; padding: 28px 0; }
   .pairs-stock .q-ask { margin: 0; }
