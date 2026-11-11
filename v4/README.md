@@ -24,3 +24,7 @@ Still the two Unsplash photos from v2 (`bedroom.jpg`, and `quilt.jpg` cropped fr
 
 ## When Hunter approves
 Same steps as `v2/README.md` and `v2/DNS.md`. Launch moves the chosen version to the repo root.
+
+## In stock now (added 2026-11-10, Hunter's idea)
+Each mattress shows the maker's list price with a link to the maker's own product page, next to our price, so a buyer can check the saving themselves. The three rows on the draft are EXAMPLES (marked on the page): the model names and list prices are real (read from saatva.com and helixsleep.com search results on 2026-11-10, sizes not double-checked), but they are not the parents' stock and "our price" is made up. Replace with real stock before launch, and remove the Example pills. Later the inventory tool writes these rows.
+Wording choice: "Maker's list price", not "retail", because makers are nearly always running a sale. The note under the list says so.

@@ -15,4 +15,8 @@ window.SITE = { textNumber: "18599627610" };
   for (i = 0; i < sizes.length; i++) {
     sizes[i].href = sms("Hi, I'm looking for a " + sizes[i].getAttribute('data-size') + " mattress. What do you have?");
   }
+  var items = document.querySelectorAll('a[data-item]');
+  for (i = 0; i < items.length; i++) {
+    items[i].href = sms("Hi, I'm interested in the " + items[i].getAttribute('data-item') + ". Is it still available?");
+  }
 })();
