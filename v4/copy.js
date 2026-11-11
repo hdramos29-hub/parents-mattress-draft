@@ -17,3 +17,19 @@
   });
   row.appendChild(btn);
 })();
+
+// Price pairs: the arrow draws in and our price settles once each list scrolls into view.
+// Off for people who ask for reduced motion; with scripts off everything simply shows.
+(function () {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var lists = document.querySelectorAll('.pairs');
+  if (!lists.length) return;
+  document.documentElement.classList.add('motion');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.3 });
+  for (var i = 0; i < lists.length; i++) io.observe(lists[i]);
+})();
