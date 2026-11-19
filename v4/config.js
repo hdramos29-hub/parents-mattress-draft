@@ -1,6 +1,6 @@
 // Site settings. Change a value here and every button that uses it updates.
 // Number buyers text, digits only with country code, no spaces or dashes.
-window.SITE = { textNumber: "18599627610" };
+window.SITE = { textNumber: "18592404514" };
 
 // Points every "Text" button at the number above, with a message already started.
 // The size buttons become texts that name the size. With scripts off, the
