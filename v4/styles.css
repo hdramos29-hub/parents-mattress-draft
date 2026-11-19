@@ -264,3 +264,6 @@ footer { background: var(--navy-deep); color: #9FACBF; padding: 26px 0; font-siz
   html { scroll-behavior: auto; }
   .btn, .sizes a, .q-maker, .arrow::before, .arrow::after, .q-here .q-v { transition: none; }
 }
+
+/* The business email is long: size it to fit one line on phones */
+#address { font-size: clamp(16px, 4.75vw, 24px); overflow-wrap: normal; white-space: nowrap; }
