@@ -294,14 +294,17 @@ footer { background: var(--navy-deep); color: #9FACBF; padding: 26px 0; font-siz
   .st-v { font-size: clamp(32px, 5vh, 44px); }
 }
 
-/* Wide screens: use more of the width, and let the first photo run to the right edge */
-.hero { overflow: hidden; }
-@media (min-width: 1280px) {
-  .hero-photo { margin-right: calc((100vw - var(--max)) / -2 - var(--gutter)); }
-  .hero-photo img { border-radius: 0 0 0 6px; }
-}
+/* Wide screens: use more of the width, with equal margins on both sides */
 @media (min-width: 1500px) {
-  :root { --max: 1280px; }
+  :root { --max: 1360px; }
+  .hero-grid { grid-template-columns: 1.2fr 1fr; gap: 72px; }
+}
+@media (min-width: 1800px) {
+  :root { --max: 1520px; }
+}
+@media (min-width: 1500px) and (min-height: 881px) {
+  .hero h1 { font-size: 64px; }
+  .hero .lede { font-size: 21px; max-width: 30em; }
 }
 /* The photo fills its column instead of setting the height of the first screen */
 @media (min-width: 760px) {
